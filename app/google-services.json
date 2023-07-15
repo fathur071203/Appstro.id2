@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "620315788483",
+    "project_id": "neurecare-a6846",
+    "storage_bucket": "neurecare-a6846.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620315788483:android:ce875dd98c2b39f1884e76",
+        "android_client_info": {
+          "package_name": "com.example.neurecare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620315788483-nfelebsoiimt1bb0eu82jiopmevf1l8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzZNAn-ugBKC6VvakgmiI2Rg8sYd05uPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620315788483-nfelebsoiimt1bb0eu82jiopmevf1l8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620315788483:android:ed9400f51f0ce7b0884e76",
+        "android_client_info": {
+          "package_name": "com.example.strokecare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620315788483-nfelebsoiimt1bb0eu82jiopmevf1l8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzZNAn-ugBKC6VvakgmiI2Rg8sYd05uPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620315788483-nfelebsoiimt1bb0eu82jiopmevf1l8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
