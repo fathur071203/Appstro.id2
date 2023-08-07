@@ -83,7 +83,6 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
                  painter = painterResource(id = R.drawable.accessibility),
                  contentDescription = "",
                  tint = Color.White,
-
                  )
 
          }
