@@ -1,5 +1,6 @@
 package com.example.neurecare.ui.screen
 
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.CircleShape
@@ -65,7 +66,8 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
          FloatingActionButton(
              shape = CircleShape,
              onClick = {
-                 Screen.AccessProgram.route.let {
+                 // Navigate to PoseDetectionScreen
+                 Routes.PoseDetection.route.let {
                      navController.navigate(it) {
                          popUpTo(navController.graph.findStartDestination().id) {
                              saveState = true
@@ -74,18 +76,15 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
                          restoreState = true
                      }
                  }
-                 Screen.AccessProgram.route.let { navController.navigate(it) }
              },
-             backgroundColor = colorResource(id = R.color.gray),
-
-             ) {
+             backgroundColor = colorResource(id = R.color.gray)
+         ) {
              Icon(
                  painter = painterResource(id = R.drawable.accessibility),
                  contentDescription = "",
-                 tint = Color.White,
-                 )
 
          }
+
      },
  ) {
      NavHost(navController = navController, startDestination = Routes.Home.route ){
@@ -108,6 +107,10 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
          composable(Routes.Profile.route){
              ProfileScreen(navController = navController)
          }
+         composable(Routes.PoseDetection.route) {
+             PoseDetectionScreen()
+         }
+
      }
 
  }

@@ -4,6 +4,7 @@ sealed class Routes(val route:String) {
     object Home : Routes("home")
     object Calendar : Routes("calendar")
     object Message : Routes("message")
+    object PoseDetection : Routes("pose_detection_screen")
     object AccessProgram : Routes("access_program")
     object Profile : Routes("profile")
     object Login : Routes("login")
