@@ -166,7 +166,7 @@ fun OnBoardingScreen(navController: NavController) {
             if (selectedPage == dummyOnBoarding.size - 1) {
                 Button(
                     onClick = {
-                        navController.navigate(Routes.Register.route) {
+                        navController.navigate(Routes.Login.route) {
                             popUpTo(Routes.OnBoard.route){
                                 inclusive = true
                             }

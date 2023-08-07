@@ -94,6 +94,7 @@ fun BottomNav(navController:NavController = rememberNavController()){
     BottomNavigation(
         modifier = Modifier
 //            .padding(8.dp, 0.dp, 12.dp, 0.dp)
+                
             .fillMaxWidth()
             .height(100.dp),
         backgroundColor = colorResource(id = R.color.teal_700),
