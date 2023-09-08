@@ -81,9 +81,10 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
          ) {
              Icon(
                  painter = painterResource(id = R.drawable.accessibility),
-                 contentDescription = "",
+                 contentDescription = "",)
 
          }
+
 
      },
  ) {
