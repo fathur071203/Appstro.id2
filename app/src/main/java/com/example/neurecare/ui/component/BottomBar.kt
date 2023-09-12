@@ -30,54 +30,53 @@ import com.example.neurecare.ui.navigation.Screen
 import androidx.navigation.compose.*
 
 //
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-@Composable
-fun BottomBar(navController: NavController) {
-    Scaffold(
-        bottomBar = {
-            BottomAppBar(
-                modifier = Modifier
-                    .height(65.dp)
-                    .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
-                cutoutShape = CircleShape,
-
-                backgroundColor = colorResource(id = R.color.teal_700),
-
-                ) {
-               BottomNav(navController = rememberNavController())
-
-
-            }
-        },
-        floatingActionButtonPosition = FabPosition.Center,
-        isFloatingActionButtonDocked = true,
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = {
-                    navController.navigate(Screen.AccessProgram.route){
-                        popUpTo(Screen.Home.route){
-                            inclusive = true
-                        }
-                    }
-                },
-                backgroundColor = colorResource(id = R.color.gray),
-
-                ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.accessibility),
-                    contentDescription = "",
-                    tint = Color.White,
-
-                    )
-
-            }
-        },
-        backgroundColor = Color.Black
-    ) {
-//        MainScreenNavigation(navController = rememberNavController())
-
-    }
-}
+//@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+//@Composable
+//fun BottomBar(navController: NavController) {
+//    Scaffold(
+//        bottomBar = {
+//            BottomAppBar(
+//                modifier = Modifier
+//                    .height(65.dp)
+//                    .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
+//                cutoutShape = CircleShape,
+//
+//                backgroundColor = colorResource(id = R.color.teal_700),
+//
+//                ) {
+//               BottomNav(navController = rememberNavController())
+//
+//
+//            }
+//        },
+//        floatingActionButtonPosition = FabPosition.Center,
+//        isFloatingActionButtonDocked = true,
+//        floatingActionButton = {
+//            FloatingActionButton(
+//                onClick = {
+//                    navController.navigate(Screen.AccessProgram.route){
+//                        popUpTo(Screen.Home.route){
+//                            inclusive = true
+//                        }
+//                    }
+//                },
+//                backgroundColor = colorResource(id = R.color.gray),
+//
+//                ) {
+//                Icon(
+//                    painter = painterResource(id = R.drawable.accessibility),
+//                    contentDescription = "",
+//                    tint = Color.White,
+//
+//                    )
+//
+//            }
+//        },
+//        backgroundColor = Color.Black
+//    ) {
+//
+//    }
+//}
 
 @Composable
 fun BottomNav(navController:NavController = rememberNavController()){
@@ -94,7 +93,7 @@ fun BottomNav(navController:NavController = rememberNavController()){
     BottomNavigation(
         modifier = Modifier
 //            .padding(8.dp, 0.dp, 12.dp, 0.dp)
-                
+
             .fillMaxWidth()
             .height(100.dp),
         backgroundColor = colorResource(id = R.color.teal_700),
@@ -138,32 +137,10 @@ fun BottomNav(navController:NavController = rememberNavController()){
     }
 }
 
-//@Composable
-//fun MainScreenNavigation(navController: NavHostController) {
-//
-//    NavHost(navController, startDestination = Screen.Profile.route!!) {
-//
-//        //profile
-//        composable(Screen.Profile.route) {
-//            // ProfileScreen()
-//        }
-//        //Calender
-//        composable(Screen.Calendar.route!!) {
-//
-//        }
-//
-//        //camera
-//        composable(Screen.Message.route!!){
-//            // CameraScreen()
-//        }
-//    }
-//
-//
-//}
 
 
 @Preview
 @Composable
 fun PreviewBottomBar() {
-    BottomNav(navController = rememberNavController())
+
 }

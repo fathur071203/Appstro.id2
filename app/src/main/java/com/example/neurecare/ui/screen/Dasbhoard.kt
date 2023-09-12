@@ -36,8 +36,8 @@ import com.example.neurecare.ui.navigation.Routes
 @Composable
 fun DashboardScreen(navController: NavHostController = rememberNavController()){
 
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = navBackStackEntry?.destination?.route
+//    val navBackStackEntry by navController.currentBackStackEntryAsState()
+////    val currentDestination = navBackStackEntry?.destination?.route
 
  Scaffold(
      bottomBar = {
@@ -99,7 +99,7 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
              PoseDetectionScreen(navController = navController)
          }
          composable(Routes.DetailProgram.route){
-             JenisProgram(navController = navController, detailViewModel = DetailViewModel())
+             JenisProgram(navController = navController, detailViewModel = DetailViewModel() )
          }
          composable(Routes.VideoScreen.route){
              detailScreenVideo(navController = navController)

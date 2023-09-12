@@ -39,16 +39,20 @@ import com.example.neurecare.ui.navigation.Routes
 @Composable
 fun JenisProgram(
     navController: NavController,
-    detailViewModel: DetailViewModel
+    detailViewModel: DetailViewModel,
 
     ) {
 
     val getData = detailViewModel.state.value
 
     Column(modifier = Modifier.fillMaxSize()) {
+
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()){
             IconButton(
-                onClick = {},
+                onClick = {
+                    navController.previousBackStackEntry?.savedStateHandle
+                    navController.popBackStack()
+                },
                 modifier = Modifier
                     .padding(start = 20.dp, top = 15.dp, bottom = 15.dp)
                     .clip(CircleShape)
