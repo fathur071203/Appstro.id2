@@ -81,9 +81,10 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
          ) {
              Icon(
                  painter = painterResource(id = R.drawable.accessibility),
-                 contentDescription = "",
+                 contentDescription = "",)
 
          }
+
 
      },
  ) {
@@ -101,7 +102,10 @@ fun DashboardScreen(navController: NavHostController = rememberNavController()){
              ProgramScreen(navController = navController)
          }
          composable(Routes.DetailProgram.route){
-             DetailScreen(navController = navController)
+             JenisProgram(navController = navController)
+         }
+         composable(Routes.VideoScreen.route){
+             detailScreenVideo(navController = navController)
          }
 //
          composable(Routes.Profile.route){

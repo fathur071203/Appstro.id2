@@ -31,34 +31,32 @@ import androidx.navigation.NavController
 import com.example.neurecare.R
 import com.example.neurecare.ui.component.ButtonPrimary
 import com.example.neurecare.ui.component.JProgram
+import com.example.neurecare.ui.navigation.Routes
 
 
-
-
-
-@Composable
-fun DetailScreen(
-//    programsId: Int,
-//    navigateBack: () -> Unit,
-//    modifier: Modifier = Modifier,
-    navController: NavController
-){
-DetailScreenPreview()
-
-}
+//@Composable
+//fun DetailScreen(
+////    programsId: Int,
+////    navigateBack: () -> Unit,
+////    modifier: Modifier = Modifier,
+//    navController: NavController
+//){
+//DetailScreenPreview()
+//
+//}
 
 @Composable
 fun JenisProgram(
-    id: Int,
-    descriptionProgram: String, //deskripsi
-    detailProgram: String, //gerakan
-    duration: String, //durasi
-    navigateBack: () -> Unit,
+
+//
+//    navigateBack: () -> Unit,
+    navController: NavController
 
     ) {
     Column(modifier = Modifier.fillMaxSize()) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()){
-            IconButton(onClick = navigateBack,
+            IconButton(
+                onClick = {},
                 modifier = Modifier
                     .padding(start = 20.dp, top = 15.dp, bottom = 15.dp)
                     .clip(CircleShape)
@@ -93,14 +91,14 @@ fun JenisProgram(
                 Icon(painter = painterResource(id = R.drawable.contract), contentDescription = null, tint = colorResource(
                     id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Jenis Program", description = descriptionProgram)
+                JProgram(text = "Jenis Program", description = "Bisa yuk")
             }
             Spacer(modifier = Modifier.height(20.dp))
             Row() {
                 Icon(painter = painterResource(id = R.drawable.format_list), contentDescription = null, tint = colorResource(
                     id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Gerakan", description = detailProgram)
+                JProgram(text = "Gerakan", description = "Bisa apa")
             }
             Spacer(modifier = Modifier.height(20.dp))
 
@@ -109,23 +107,15 @@ fun JenisProgram(
                     contentDescription = null, tint = colorResource(
                         id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Estimasi Waktu", description = duration)
+                JProgram(text = "Estimasi Waktu", description = "Bisa bisa aja")
             }
         }
         Spacer(modifier = Modifier.weight(0.5f))
 
         Column(modifier = Modifier.padding(25.dp)) {
-            ButtonPrimary(onClick = { /*TODO*/ }, text = "Mulai Program" )
+            ButtonPrimary(onClick = { navController.navigate(Routes.VideoScreen.route) }, text = "Mulai Program" )
         }
     }
 
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DetailScreenPreview(){
-    JenisProgram(id = 1, descriptionProgram = "Latihan Tubuh Bagian Atas", detailProgram = "Memutar pergelangan tangan", duration = "30 menit" ) {
-
-    }
-
-}

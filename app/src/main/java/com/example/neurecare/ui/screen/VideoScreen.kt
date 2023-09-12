@@ -59,9 +59,7 @@ navController: NavController
 
 @Composable
 fun detailScreenVideo(
-    id: Int,
-    descriptionProgram: String, //deskripsi
-    detailProgram: String, //gerakan
+    navController: NavController
 
     ) {
     Column(modifier = Modifier.fillMaxSize()) {
@@ -107,14 +105,14 @@ fun detailScreenVideo(
                 Icon(painter = painterResource(id = R.drawable.accessibility), contentDescription = null, tint = colorResource(
                     id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Nama Gerakan", description = descriptionProgram)
+                JProgram(text = "Nama Gerakan", description = "Pokoknya bisa")
             }
             Spacer(modifier = Modifier.height(20.dp))
             Row() {
                 Icon(painter = painterResource(id = R.drawable.description), contentDescription = null, tint = colorResource(
                     id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Gerakan", description = detailProgram)
+                JProgram(text = "Gerakan", description = "Semangatt")
             }
         }
     }
@@ -185,11 +183,7 @@ fun bottomNavPreview(){
     bottomNav()
 }
 
-@Preview(showBackground = true)
-@Composable
-fun ProgramScreenPreview(){
-   detailScreenVideo(id = 1, descriptionProgram = "Latihan tubuh bagian atas", detailProgram ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices ut nulla vehicula semper. Vestibulum lacinia enim nec volutpat dictum." )
-}
+
 
 
 

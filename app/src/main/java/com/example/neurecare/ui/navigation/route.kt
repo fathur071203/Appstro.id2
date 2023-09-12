@@ -12,6 +12,8 @@ sealed class Routes(val route:String) {
     object OnBoard : Routes("on_board")
     object Dashboard : Routes("dashboard")
     object SplashScreen : Routes("splash_screen")
+
+    object VideoScreen : Routes("video_screen")
     object DetailProgram : Routes("detail/{id}") {
         fun createRoute(id: Int) = "detail/$id"
     }

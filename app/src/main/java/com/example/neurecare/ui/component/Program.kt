@@ -97,8 +97,6 @@ fun Programs(navController: NavController)
                 ,
                 onClick = {
                           navController.navigate(Routes.DetailProgram.route)
-
-
                 },
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = colorResource(id = R.color.teal_700)
