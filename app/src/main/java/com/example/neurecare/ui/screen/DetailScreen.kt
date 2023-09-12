@@ -27,32 +27,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.example.neurecare.R
+import com.example.neurecare.data.model.DetailViewModel
 import com.example.neurecare.ui.component.ButtonPrimary
 import com.example.neurecare.ui.component.JProgram
 import com.example.neurecare.ui.navigation.Routes
 
 
-//@Composable
-//fun DetailScreen(
-////    programsId: Int,
-////    navigateBack: () -> Unit,
-////    modifier: Modifier = Modifier,
-//    navController: NavController
-//){
-//DetailScreenPreview()
-//
-//}
-
 @Composable
 fun JenisProgram(
-
-//
-//    navigateBack: () -> Unit,
-    navController: NavController
+    navController: NavController,
+    detailViewModel: DetailViewModel
 
     ) {
+
+    val getData = detailViewModel.state.value
+
     Column(modifier = Modifier.fillMaxSize()) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()){
             IconButton(
@@ -91,14 +83,14 @@ fun JenisProgram(
                 Icon(painter = painterResource(id = R.drawable.contract), contentDescription = null, tint = colorResource(
                     id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Jenis Program", description = "Bisa yuk")
+                JProgram(text = "Jenis Program", description = getData.typeProgram)
             }
             Spacer(modifier = Modifier.height(20.dp))
             Row() {
                 Icon(painter = painterResource(id = R.drawable.format_list), contentDescription = null, tint = colorResource(
                     id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Gerakan", description = "Bisa apa")
+                JProgram(text = "Gerakan", description = getData.motion)
             }
             Spacer(modifier = Modifier.height(20.dp))
 
@@ -107,7 +99,7 @@ fun JenisProgram(
                     contentDescription = null, tint = colorResource(
                         id = R.color.orange ), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(13.dp))
-                JProgram(text = "Estimasi Waktu", description = "Bisa bisa aja")
+                JProgram(text = "Estimasi Waktu", description = getData.estimateTime)
             }
         }
         Spacer(modifier = Modifier.weight(0.5f))

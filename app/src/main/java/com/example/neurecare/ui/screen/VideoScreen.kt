@@ -1,7 +1,8 @@
 package com.example.neurecare.ui.screen
 
 import android.annotation.SuppressLint
-import android.widget.ImageView
+import android.content.Context
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -17,15 +18,14 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomAppBar
-import androidx.compose.material.BottomNavigation
 import androidx.compose.material.FabPosition
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,12 +33,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -48,6 +48,12 @@ import com.example.neurecare.ui.component.BottomNav
 import com.example.neurecare.ui.component.ButtonPrimary
 import com.example.neurecare.ui.component.JProgram
 import com.example.neurecare.ui.navigation.Routes
+import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.ui.PlayerView
+import com.google.android.exoplayer2.upstream.DataSource
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.android.exoplayer2.util.Util
 
 
 @Composable
@@ -62,6 +68,7 @@ fun detailScreenVideo(
     navController: NavController
 
     ) {
+
     Column(modifier = Modifier.fillMaxSize()) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()){
             IconButton(onClick = {
@@ -90,11 +97,11 @@ fun detailScreenVideo(
             horizontalAlignment = Alignment.CenterHorizontally, // Mengatur penataan horizontal menjadi tengah
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(15.dp)
+//                .padding(15.dp)
                 .width(300.dp)
-                .height(175.dp)
-                .border(15.dp, Color.Black, CircleShape)
-                .background(color = Color.Black)) {
+                .height(175.dp)) {
+
+            playVideo(context = navController.context)
 
         }
         Spacer(modifier = Modifier.height(20.dp))
@@ -117,6 +124,34 @@ fun detailScreenVideo(
         }
     }
 }
+
+@Composable
+fun playVideo(context: Context) {
+
+    val videoUrl =
+        "https://storage.googleapis.com/video-assets-appstro/VID_20230907_211719.mp4"
+
+    val exoPlayer = remember(context) {
+        SimpleExoPlayer.Builder(context).build().apply {
+            val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
+                context,
+                Util.getUserAgent(context, context.packageName)
+            )
+
+            val source = ProgressiveMediaSource.Factory(dataSourceFactory)
+                .createMediaSource(Uri.parse(videoUrl))
+
+            this.prepare(source)
+        }
+    }
+
+    AndroidView(factory = { context ->
+        PlayerView(context).apply {
+            player = exoPlayer
+        }
+    })
+}
+
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -169,9 +204,7 @@ fun bottomNav(navController: NavHostController = rememberNavController()){
 
         },
     ) {
-        NavHost(navController = navController, startDestination = Routes.Home.route){
 
-        }
     }
 
 

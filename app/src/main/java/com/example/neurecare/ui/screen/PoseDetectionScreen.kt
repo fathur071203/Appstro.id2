@@ -28,18 +28,19 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.github.mikephil.charting.utils.ColorTemplate
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.navigation.NavController
 
-class PoseDetectionActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            PoseDetectionScreen()
-        }
-    }
-}
+//class PoseDetectionActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            PoseDetectionScreen(navController = ())
+//        }
+//    }
+//}
 
 @Composable
-fun PoseDetectionScreen() {
+fun PoseDetectionScreen(navController: NavController) {
     Surface(color = MaterialTheme.colorScheme.background) {
         var shoulderRightAngle by remember { mutableStateOf(0.0) }
         var shoulderLeftAngle by remember { mutableStateOf(0.0) }
@@ -194,9 +195,9 @@ fun PoseDetectionScreen() {
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    PoseDetectionScreen()
-}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    PoseDetectionScreen()
+//}
