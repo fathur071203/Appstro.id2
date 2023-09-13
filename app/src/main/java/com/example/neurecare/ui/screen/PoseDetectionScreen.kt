@@ -18,6 +18,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.navigation.NavController
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.components.YAxis
@@ -29,17 +30,10 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.github.mikephil.charting.utils.ColorTemplate
 
-class PoseDetectionActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            PoseDetectionScreen()
-        }
-    }
-}
+
 
 @Composable
-fun PoseDetectionScreen() {
+fun PoseDetectionScreen(navController: NavController) {
     Surface(color = MaterialTheme.colorScheme.background) {
         var shoulderRightAngle by remember { mutableStateOf(0.0) }
         var shoulderLeftAngle by remember { mutableStateOf(0.0) }
@@ -170,8 +164,4 @@ fun PoseDetectionScreen() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    PoseDetectionScreen()
-}
+

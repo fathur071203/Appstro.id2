@@ -1,6 +1,7 @@
 package com.example.neurecare.ui.screen
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -85,12 +86,6 @@ fun OnBoardingScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(24.dp)
                 ) {
-//                    LottieAnimation(
-//                        composition,
-//                        /// looping the animation
-//                        iterations = LottieConstants.IterateForever,
-//                        modifier = Modifier.weight(1f)
-//                    )
                     Image(painter = painterResource(id = dummyOnBoarding[it].icon), contentDescription = null)
                     Text(
                         dummyOnBoarding[it].title,
@@ -199,7 +194,10 @@ fun TopSection(onSkipClick: () -> Unit = {}) {
     ) {
         // Skip Button
         TextButton(
-            onClick = onSkipClick,
+            onClick = {
+                onSkipClick()
+                Log.d("OnBoardingScreen", "Skip button clicked")
+            },
             modifier = Modifier.align(Alignment.CenterEnd),
             contentPadding = PaddingValues(0.dp)
         ) {
