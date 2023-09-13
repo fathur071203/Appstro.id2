@@ -37,15 +37,15 @@ fun Programs(navController: NavController)
         .clip(RoundedCornerShape(20.dp))
         .width(350.dp)
         .height(284.dp)
-        .background(colorResource(id = R.color.yellow_CD1))
-        .border(width = 2.dp, colorResource(id = R.color.yellow))
+        .background(colorResource(id = R.color.white))
+        .border(width = 2.dp, colorResource(id = R.color.white))
     ) {
         Column(modifier = Modifier) {
             Row(modifier = Modifier.padding(15.dp)) {
 
                 Row(modifier = Modifier
                     .clip(RoundedCornerShape(20.dp))
-                    .background(colorResource(id = R.color.white))
+                    .background(colorResource(id = R.color.Abu))
                     .width(150.dp)
                     .height(160.dp)) {
 
@@ -55,10 +55,10 @@ fun Programs(navController: NavController)
                         .padding(vertical = 10.dp)) {
                         Icon(painter = painterResource(id = R.drawable.accessibility),
                             contentDescription =null, modifier = Modifier.size(32.dp),
-                        tint = colorResource(id = R.color.orange))
+                        tint = colorResource(id = R.color.LightGray))
                         Spacer(modifier = Modifier.weight(0.5f))
                         Text("8", fontSize = 32.sp, fontWeight = FontWeight.Bold)
-                        Text("Gerakan", fontSize = 16.sp, color = colorResource(id = R.color.teal_700))
+                        Text("Gerakan", fontSize = 16.sp, color = colorResource(id = R.color.Purple))
 
                     }
 
@@ -66,7 +66,7 @@ fun Programs(navController: NavController)
                 Spacer(modifier = Modifier.weight(1f))
                 Row(modifier = Modifier
                     .clip(RoundedCornerShape(20.dp))
-                    .background(colorResource(id = R.color.white))
+                    .background(colorResource(id = R.color.Abu))
                     .width(150.dp)
                     .height(160.dp)) {
                     Column(modifier = Modifier
@@ -74,10 +74,10 @@ fun Programs(navController: NavController)
                         .padding(vertical = 10.dp)) {
                         Icon(painter = painterResource(id = R.drawable.timer),
                             contentDescription =null, modifier = Modifier.size(32.dp),
-                            tint = colorResource(id = R.color.orange))
+                            tint = colorResource(id = R.color.LightGray))
                         Spacer(modifier = Modifier.weight(0.5f))
                         Text("20", fontSize = 32.sp, fontWeight = FontWeight.Bold)
-                        Text("Menit", fontSize = 16.sp, color = colorResource(id = R.color.teal_700))
+                        Text("Menit", fontSize = 16.sp, color = colorResource(id = R.color.Purple))
 
                     }
 
@@ -99,7 +99,7 @@ fun Programs(navController: NavController)
                           navController.navigate(Routes.DetailProgram.route)
                 },
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = colorResource(id = R.color.teal_700)
+                    backgroundColor = colorResource(id = R.color.Blue_4B)
                 )
             ) {
                 Row() {

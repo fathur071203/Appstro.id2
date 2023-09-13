@@ -17,4 +17,6 @@ sealed class Routes(val route:String) {
     object DetailProgram : Routes("detail/{id}") {
         fun createRoute(id: Int) = "detail/$id"
     }
+    object SkipNext : Routes("skip_next")
+    object SkipPrevious : Routes("skip_previous")
 }

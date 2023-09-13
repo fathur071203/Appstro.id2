@@ -1,6 +1,7 @@
 package com.example.neurecare.ui.screen
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -85,24 +86,18 @@ fun OnBoardingScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(24.dp)
                 ) {
-//                    LottieAnimation(
-//                        composition,
-//                        /// looping the animation
-//                        iterations = LottieConstants.IterateForever,
-//                        modifier = Modifier.weight(1f)
-//                    )
                     Image(painter = painterResource(id = dummyOnBoarding[it].icon), contentDescription = null)
                     Text(
                         dummyOnBoarding[it].title,
                         fontSize = 24.sp,
-                        color = colorResource(id = R.color.brown),
+                        color = colorResource(id = R.color.Blue_4B),
                         textAlign = TextAlign.Center
                     )
                     Box(modifier = Modifier.height(24.dp))
                     Text(
                         dummyOnBoarding[it].description,
                         fontSize = 14.sp,
-                        color = colorResource(id = R.color.teal_700),
+                        color = colorResource(id = R.color.LightGray),
                         textAlign = TextAlign.Center,
                     )
                 }
@@ -153,7 +148,7 @@ fun OnBoardingScreen(navController: NavController) {
                             .width(300.dp)
                             .clip(RoundedCornerShape(20.dp)),
                         colors = ButtonDefaults.buttonColors(
-                            backgroundColor = colorResource(id = R.color.brown)
+                            backgroundColor = colorResource(id = R.color.Blue_4B)
                         )
 
                     ) {
@@ -179,7 +174,7 @@ fun OnBoardingScreen(navController: NavController) {
                         .height(56.dp)
                         .clip(RoundedCornerShape(20.dp)),
                     colors = ButtonDefaults.buttonColors(
-                        backgroundColor = colorResource(id = R.color.brown)
+                        backgroundColor = colorResource(id = R.color.Blue_4B)
                     )
 
                 ) {
@@ -199,11 +194,14 @@ fun TopSection(onSkipClick: () -> Unit = {}) {
     ) {
         // Skip Button
         TextButton(
-            onClick = onSkipClick,
+            onClick = {
+                onSkipClick()
+                Log.d("OnBoardingScreen", "Skip button clicked")
+            },
             modifier = Modifier.align(Alignment.CenterEnd),
             contentPadding = PaddingValues(0.dp)
         ) {
-            Text(text = "Skip", color = colorResource(id = R.color.brown), fontSize = 14.sp)
+            Text(text = "Skip", color = colorResource(id = R.color.Blue_4B), fontSize = 14.sp)
         }
     }
 }

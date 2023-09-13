@@ -32,7 +32,7 @@ import com.example.neurecare.R
 fun GreetingBar() {
     Box(modifier = Modifier
         .clip(RoundedCornerShape(20, 20, 40, 40))
-        .background(colorResource(id = R.color.teal_700))
+        .background(colorResource(id = R.color.Purple))
         .width(350.dp)
         .height(144.dp))
     {

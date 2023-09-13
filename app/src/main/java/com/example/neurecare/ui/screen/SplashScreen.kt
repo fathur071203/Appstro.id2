@@ -37,7 +37,7 @@ fun SplashScreen(navController: NavController){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.gray)),
+            .background(color = colorResource(id = R.color.Blue_4B)),
 //        contentAlignment = Alignment.BottomEnd,
         contentAlignment = Alignment.Center
     ) {
@@ -65,22 +65,22 @@ fun SplashScreen(navController: NavController){
 
 }
 
-@Composable
-fun Navigate(){
-    val navController = rememberNavController()
-    NavHost(navController = navController,
-        startDestination = Routes.SplashScreen.route) {
-        composable(Routes.SplashScreen.route) {
-            SplashScreen(navController = navController)
-        }
-        composable(Routes.OnBoard.route) {
-            OnBoardingScreen(navController = navController)
-        }
-        composable(Routes.Register.route) {
-            SignInScreen(navController = navController)
-        }
-    }
-}
+//@Composable
+//fun Navigate(){
+//    val navController = rememberNavController()
+//    NavHost(navController = navController,
+//        startDestination = Routes.SplashScreen.route) {
+//        composable(Routes.SplashScreen.route) {
+//            SplashScreen(navController = navController)
+//        }
+//        composable(Routes.OnBoard.route) {
+//            OnBoardingScreen(navController = navController)
+//        }
+//        composable(Routes.Register.route) {
+//            SignInScreen(navController = navController)
+//        }
+//    }
+//}
 
 @Preview(showBackground = true)
 @Composable

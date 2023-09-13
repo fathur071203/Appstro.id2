@@ -28,6 +28,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.R
 import com.example.neurecare.data.model.DetailViewModel
 import com.example.neurecare.ui.component.BottomNav
+import com.example.neurecare.ui.component.BottomNavVideoScreen
 //import com.example.neurecare.ui.component.BottomBar
 import com.example.neurecare.ui.navigation.Routes
 
@@ -36,49 +37,64 @@ import com.example.neurecare.ui.navigation.Routes
 @Composable
 fun DashboardScreen(navController: NavHostController = rememberNavController()){
 
-//    val navBackStackEntry by navController.currentBackStackEntryAsState()
-////    val currentDestination = navBackStackEntry?.destination?.route
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination?.route
 
  Scaffold(
      bottomBar = {
-//         if (currentDestination != Routes.AccessProgram.route){
-//             BottomNav(navController = navController)
-         BottomAppBar(
-             modifier = Modifier
-                 .height(65.dp)
-                 .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
-             cutoutShape = CircleShape,
+         if (currentDestination != Routes.DetailProgram.route){
+             BottomAppBar(
+                 modifier = Modifier
+                     .height(65.dp)
+                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
+                 cutoutShape = CircleShape,
 
-             backgroundColor = colorResource(id = R.color.teal_700),
+                 backgroundColor = colorResource(id = R.color.Purple),
 
-             ) {
-             BottomNav(navController = navController)
+                 ) {
+                 if (currentDestination != Routes.DetailProgram.route) {
+                     if (currentDestination == Routes.VideoScreen.route) {
+                         // Tampilkan bottom navigation yang berbeda untuk Video Screen
+                         BottomNavVideoScreen(navController)
+                     } else {
+                         BottomNav(navController = navController)
+                     }
+                 }
+             }
          }
-
 
      },
      floatingActionButtonPosition = FabPosition.Center,
      isFloatingActionButtonDocked = true,
+
      floatingActionButton = {
-         FloatingActionButton(
-             shape = CircleShape,
-             onClick = {
-                 // Navigate to PoseDetectionScreen
-                 Routes.AccessProgram.route.let {
-                     navController.navigate(it) {
-                         popUpTo(navController.graph.findStartDestination().id) {
-                             saveState = true
+         if (currentDestination != Routes.DetailProgram.route){
+             FloatingActionButton(
+                 shape = CircleShape,
+                 onClick = {
+                                        // Navigate to PoseDetectionScreen
+                     Routes.AccessProgram.route.let {
+                         navController.navigate(it) {
+                             popUpTo(navController.graph.findStartDestination().id) {
+                                 saveState = true
+                             }
+                             launchSingleTop = true
+                             restoreState = true
                          }
-                         launchSingleTop = true
-                         restoreState = true
-                     }
+                     } },
+                 backgroundColor = colorResource(id = R.color.Blue_4B)
+             ) {
+                 if (currentDestination != Routes.VideoScreen.route) {
+                     Icon(
+                         painter = painterResource(id = R.drawable.accessibility),
+                         contentDescription = "",)
+
+                 } else {
+                     Icon(
+                         painter = painterResource(id = R.drawable.videocam),
+                         contentDescription = "",)
                  }
-             },
-             backgroundColor = colorResource(id = R.color.gray)
-         ) {
-             Icon(
-                 painter = painterResource(id = R.drawable.accessibility),
-                 contentDescription = "",)
+                 }
 
          }
 

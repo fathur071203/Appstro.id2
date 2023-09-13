@@ -31,12 +31,9 @@ suspend fun getDataDetailProgram(): DataDetailProgram{
     var dataDetailProgram = DataDetailProgram()
 
     try {
-        val querySnapshot = db.collection("data_program").get().await()
-        if (!querySnapshot.isEmpty) {
-            val result = querySnapshot.documents[0].toObject(DataDetailProgram::class.java)
-            if (result != null) {
-                dataDetailProgram = result
-            }
+         db.collection("data_program").get().await().map {
+            val result = it.toObject(DataDetailProgram::class.java)
+            dataDetailProgram = result
         }
 
     }

@@ -29,63 +29,12 @@ import com.example.neurecare.R
 import com.example.neurecare.ui.navigation.Screen
 import androidx.navigation.compose.*
 
-//
-//@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-//@Composable
-//fun BottomBar(navController: NavController) {
-//    Scaffold(
-//        bottomBar = {
-//            BottomAppBar(
-//                modifier = Modifier
-//                    .height(65.dp)
-//                    .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
-//                cutoutShape = CircleShape,
-//
-//                backgroundColor = colorResource(id = R.color.teal_700),
-//
-//                ) {
-//               BottomNav(navController = rememberNavController())
-//
-//
-//            }
-//        },
-//        floatingActionButtonPosition = FabPosition.Center,
-//        isFloatingActionButtonDocked = true,
-//        floatingActionButton = {
-//            FloatingActionButton(
-//                onClick = {
-//                    navController.navigate(Screen.AccessProgram.route){
-//                        popUpTo(Screen.Home.route){
-//                            inclusive = true
-//                        }
-//                    }
-//                },
-//                backgroundColor = colorResource(id = R.color.gray),
-//
-//                ) {
-//                Icon(
-//                    painter = painterResource(id = R.drawable.accessibility),
-//                    contentDescription = "",
-//                    tint = Color.White,
-//
-//                    )
-//
-//            }
-//        },
-//        backgroundColor = Color.Black
-//    ) {
-//
-//    }
-//}
-
 @Composable
-fun BottomNav(navController:NavController = rememberNavController()){
+fun BottomNavVideoScreen(navController:NavController = rememberNavController()){
 
-        val navigationItems = listOf(
-        Screen.Home,
-        Screen.Calendar,
-        Screen.Message,
-        Screen.Profile
+    val navigationItems = listOf(
+        Screen.SkipPrevious,
+        Screen.SkipNext
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -115,9 +64,66 @@ fun BottomNav(navController:NavController = rememberNavController()){
                 },
                 alwaysShowLabel = true,
                 selected = currentDestination?.hierarchy?.any { destination -> destination.route == it.route } == true,
+                unselectedContentColor = Color.White,
+                onClick = {
+                    navController.navigate(it.route) {
+                        navController.graph.startDestinationRoute?.let { route ->
+                            popUpTo(route) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
 
+                }
+            )
+        }
 
-//                selectedContentColor = Color.Gray,
+    }
+
+}
+
+@Composable
+fun BottomNav(navController:NavController = rememberNavController()){
+
+        val navigationItems = listOf(
+        Screen.Home,
+        Screen.Calendar,
+        Screen.Message,
+        Screen.Profile
+    )
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination
+
+    BottomNavigation(
+        modifier = Modifier
+//            .padding(8.dp, 0.dp, 12.dp, 0.dp)
+
+            .fillMaxWidth()
+            .height(100.dp),
+        backgroundColor = colorResource(id = R.color.Purple),
+        //backgroundColor = Color.White,
+        elevation = 0.dp
+    ) {
+        if (currentDestination != null) {
+
+        }
+
+        navigationItems.forEach {
+            BottomNavigationItem(
+                icon = {
+                    it.icon?.let {
+                        Icon(
+                            imageVector = it,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(25.dp)
+                        )
+                    }
+                },
+                alwaysShowLabel = true,
+                selected = currentDestination?.hierarchy?.any { destination -> destination.route == it.route } == true,
                 unselectedContentColor = Color.White,
                 onClick = {
                     navController.navigate(it.route) {
@@ -142,5 +148,5 @@ fun BottomNav(navController:NavController = rememberNavController()){
 @Preview
 @Composable
 fun PreviewBottomBar() {
-
+    BottomNavVideoScreen()
 }
