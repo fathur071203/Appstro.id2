@@ -21,7 +21,7 @@ fun ButtonPrimary(onClick: () -> Unit, text: String){
             .fillMaxWidth()
             .height(59.dp),
         onClick = onClick,
-        colors = ButtonDefaults.buttonColors(colorResource(id = R.color.brown)),
+        colors = ButtonDefaults.buttonColors(colorResource(id = R.color.Purple)),
         shape = RoundedCornerShape(20.dp),) {
         Text(text = text, fontSize = 16.sp, color = Color.White)
 

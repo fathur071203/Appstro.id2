@@ -4,4 +4,6 @@
     <string name="password">Password</string>
     <string name="Email">Email</string>
     <string name="Nama_lengkap">Nama Lengkap</string>
+    <string name="Nama_Gerakan">Nama Gerakan</string>
+    <string name="Deskripsi">Deskripsi</string>
 </resources>

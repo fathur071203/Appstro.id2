@@ -43,8 +43,10 @@ fun GreetingBar() {
                     .wrapContentSize()
                     .weight(1f)
                     .padding(start = 10.dp),
+                color = colorResource(id = R.color.white),
                 fontWeight = FontWeight.Bold,
                 fontSize = 15.sp
+
 
 
             )
