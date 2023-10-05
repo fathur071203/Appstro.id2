@@ -31,9 +31,9 @@ import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.navigation.Routes
 
 @Composable
-fun AddMove(navController: NavController) {
+fun ChooseM(navController: NavController) {
     Column(modifier = Modifier.padding(16.dp)) {
-        MoveAdd()
+        Choose()
 
         Spacer(modifier = Modifier.height(20.dp))
         TextContent(title = "Nama Gerakan")
@@ -50,7 +50,7 @@ fun AddMove(navController: NavController) {
             onClick = {
                 // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
                 // dan mengatur URI video yang dipilih ke variabel videoUri.
-                // Contoh, Anda dapat menggunakan FilePicker API jika  -verisoersedia.
+                // Contoh, Anda dapat menggunakan FilePicker API jika tersedia.
                 // Kemudian, Anda dapat menangani URI video yang dipilih sesuai kebutuhan.
             },
             shape = RoundedCornerShape(20.dp),
@@ -76,7 +76,7 @@ fun AddMove(navController: NavController) {
 }
 
 @Composable
-fun MoveAdd() {
+fun Choose() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
@@ -98,6 +98,6 @@ fun MoveAdd() {
 
 @Preview(showBackground = true)
 @Composable
-fun Move() {
+fun ChooseA() {
     AddMove(navController = rememberNavController())
 }
