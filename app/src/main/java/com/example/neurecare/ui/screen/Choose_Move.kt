@@ -27,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.R
 import com.example.neurecare.ui.component.ButtonPrimary
 import com.example.neurecare.ui.component.PrimaryTextField
+import com.example.neurecare.ui.component.PrimaryTextFieldSearch
 import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.navigation.Routes
 
@@ -34,44 +35,13 @@ import com.example.neurecare.ui.navigation.Routes
 fun ChooseM(navController: NavController) {
     Column(modifier = Modifier.padding(16.dp)) {
         Choose()
-
-        Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Nama Gerakan")
-        Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Gerakan))
-        Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Deskripsi")
-        Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Deskripsi))
-        Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Video Gerakan")
-// Button for uploading video
-        Button(
-            onClick = {
-                // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
-                // dan mengatur URI video yang dipilih ke variabel videoUri.
-                // Contoh, Anda dapat menggunakan FilePicker API jika tersedia.
-                // Kemudian, Anda dapat menangani URI video yang dipilih sesuai kebutuhan.
-            },
-            shape = RoundedCornerShape(20.dp),
-            modifier = Modifier.fillMaxWidth()
-                .padding(start = 20.dp, top = 15.dp, bottom = 15.dp)
-                .size(60.dp)
-                .testTag("upload_button")
-                .background(colorResource(id = R.color.white))
-                .border(1.dp, colorResource(id = R.color.Purple), shape = RoundedCornerShape(20.dp)),
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.White,
-                contentColor = colorResource(id = R.color.Purple) // Warna teks ungu (purple)
-            )
-        ) {
-            Text("Unggah Video")
-        }
-
+        Spacer(modifier = Modifier.height(10.dp))
+        PrimaryTextFieldSearch(placeholder = stringResource(id =  R.string.Cari_Gerakan))
         Spacer(modifier = Modifier.height(175.dp))
 
         ButtonPrimary(onClick = { /*TODO*/ }, text = "Tambah Gerakan")
         Spacer(modifier = Modifier.height(15.dp))
+
     }
 }
 
@@ -87,10 +57,10 @@ fun Choose() {
             modifier = Modifier.size(30.dp)
         )
         Text(
-            "Tambah Gerakan",
+            "Pilih Gerakan",
             fontSize = 24.sp,
             fontWeight = FontWeight.SemiBold,
-            color = colorResource(id = R.color.Purple),
+            color = colorResource(id = R.color.Blue_4B),
             modifier = Modifier.weight(1f) // Menggunakan weight untuk memberikan ruang yang sama pada gambar dan teks
         )
     }
@@ -99,5 +69,5 @@ fun Choose() {
 @Preview(showBackground = true)
 @Composable
 fun ChooseA() {
-    AddMove(navController = rememberNavController())
+    ChooseM(navController = rememberNavController())
 }

@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -155,51 +156,51 @@ fun DetailProfile(title: String, icon: Int){
     }
 }
 
-//    @Composable
-//    fun BodyProfile() {
-//        Column(
-//            modifier = Modifier
-//                .clip(RoundedCornerShape(20.dp))
-//                .fillMaxWidth()
-////                .padding(20.dp)
-//                .width(350.dp)
-//                .height(370.dp)
-//                .background(color = colorResource(id = R.color.yellow)),
-//
-//
-//        ) {
-//            Column(
-//                modifier = Modifier.padding(20.dp)
-//            ) {
-//                TitleContent(title = "Nama Lengkap")
-//                Spacer(modifier = Modifier.height(3.dp))
-//                TextContent(title = "Email")
-//                Spacer(modifier = Modifier.height(20.dp))
-//                TitleContent(title = "Nama Lengkap")
-//                Spacer(modifier = Modifier.height(3.dp))
-//                TextContent(title = "michael.mitc@example.com")
-//                Spacer(modifier = Modifier.height(20.dp))
-//                TitleContent(title = "No Telepon")
-//                Spacer(modifier = Modifier.height(3.dp))
-//                TextContent(title = "089 123 456 789")
-//                Spacer(modifier = Modifier.height(20.dp))
-//                TitleContent(title = "Tanggal Lahir")
-//                Spacer(modifier = Modifier.height(3.dp))
-//                TextContent(title = "9 Mei 1980")
-//                Spacer(modifier = Modifier.height(20.dp))
-//                TitleContent(title = "Jenis Kelamin")
-//                Spacer(modifier = Modifier.height(3.dp))
-//                TextContent(title = "Laki-laki")
-//                Spacer(modifier = Modifier.height(20.dp))
-//                TitleContent(title = "Riwayat medis")
-//                Spacer(modifier = Modifier.height(3.dp))
-//                TextContent(title = "Asam Lambung")
-//                Spacer(modifier = Modifier.height(20.dp))
-//            }
-//
-//
-//        }
-//    }
+    @Composable
+    fun BodyProfile() {
+        Column(
+            modifier = Modifier
+                .clip(RoundedCornerShape(20.dp))
+                .fillMaxWidth()
+//                .padding(20.dp)
+                .width(350.dp)
+                .height(370.dp)
+                .background(color = colorResource(id = R.color.yellow)),
+
+
+        ) {
+            Column(
+                modifier = Modifier.padding(20.dp)
+            ) {
+                TitleContent(title = "Nama Lengkap")
+                Spacer(modifier = Modifier.height(3.dp))
+                TextContent(title = "Email")
+                Spacer(modifier = Modifier.height(20.dp))
+                TitleContent(title = "Nama Lengkap")
+                Spacer(modifier = Modifier.height(3.dp))
+                TextContent(title = "michael.mitc@example.com")
+                Spacer(modifier = Modifier.height(20.dp))
+                TitleContent(title = "No Telepon")
+                Spacer(modifier = Modifier.height(3.dp))
+                TextContent(title = "089 123 456 789")
+                Spacer(modifier = Modifier.height(20.dp))
+                TitleContent(title = "Tanggal Lahir")
+                Spacer(modifier = Modifier.height(3.dp))
+                TextContent(title = "9 Mei 1980")
+                Spacer(modifier = Modifier.height(20.dp))
+                TitleContent(title = "Jenis Kelamin")
+                Spacer(modifier = Modifier.height(3.dp))
+                TextContent(title = "Laki-laki")
+                Spacer(modifier = Modifier.height(20.dp))
+                TitleContent(title = "Riwayat medis")
+                Spacer(modifier = Modifier.height(3.dp))
+                TextContent(title = "Asam Lambung")
+                Spacer(modifier = Modifier.height(20.dp))
+            }
+
+
+        }
+    }
 
 @Preview(showBackground = true)
 @Composable

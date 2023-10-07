@@ -5,5 +5,11 @@
     <string name="Email">Email</string>
     <string name="Nama_lengkap">Nama Lengkap</string>
     <string name="Nama_Gerakan">Nama Gerakan</string>
+    <string name="Cari_Gerakan">Cari Gerakan</string>
     <string name="Deskripsi">Deskripsi</string>
+    <string name="Nama_Kegiatan">Nama Kegiatan</string>
+    <string name="Nama_Terapis">Nama Terapis</string>
+    <string name="Lokasi">Lokasi</string>
+    <string name="Waktu">Waktu</string>
+    <string name="Nama_Program">Nama Program</string>
 </resources>

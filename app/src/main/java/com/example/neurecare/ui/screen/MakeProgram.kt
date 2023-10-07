@@ -31,20 +31,23 @@ import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.navigation.Routes
 
 @Composable
-fun AddMove(navController: NavController) {
+fun MakeProgram(navController: NavController) {
     Column(modifier = Modifier.padding(16.dp)) {
-        MoveAdd()
+        MakeP()
 
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Nama Gerakan")
+        TextContent(title = "Nama Program")
         Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Gerakan))
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Program))
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Deskripsi")
+        TextContent(title = "Nama Terapis")
         Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Deskripsi))
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Terapis))
+        Spacer(modifier = Modifier.height(5.dp))
+        TextContent(title = "List Gerakan")
+        Spacer(modifier = Modifier.height(5.dp))
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Terapis))
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Video Gerakan")
 // Button for uploading video
         Button(
             onClick = {
@@ -65,18 +68,18 @@ fun AddMove(navController: NavController) {
                 contentColor = colorResource(id = R.color.Purple) // Warna teks ungu (purple)
             )
         ) {
-            Text("Unggah Video")
+            Text("+ Pilih Gerakan")
         }
 
         Spacer(modifier = Modifier.height(175.dp))
 
-        ButtonPrimary(onClick = { /*TODO*/ }, text = "Tambah Gerakan")
+        ButtonPrimary(onClick = { /*TODO*/ }, text = "Simpan Program")
         Spacer(modifier = Modifier.height(15.dp))
     }
 }
 
 @Composable
-fun MoveAdd() {
+fun MakeP() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
@@ -87,7 +90,7 @@ fun MoveAdd() {
             modifier = Modifier.size(30.dp)
         )
         Text(
-            "Tambah Gerakan",
+            "Tambah Kegiatan",
             fontSize = 24.sp,
             fontWeight = FontWeight.SemiBold,
             color = colorResource(id = R.color.Blue_4B),
@@ -98,6 +101,6 @@ fun MoveAdd() {
 
 @Preview(showBackground = true)
 @Composable
-fun Move() {
-    AddMove(navController = rememberNavController())
+fun MakeProg() {
+    MakeProgram(navController = rememberNavController())
 }

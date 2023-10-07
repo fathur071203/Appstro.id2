@@ -31,42 +31,25 @@ import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.navigation.Routes
 
 @Composable
-fun AddMove(navController: NavController) {
+fun Activityadd(navController: NavController) {
     Column(modifier = Modifier.padding(16.dp)) {
-        MoveAdd()
+        UpActi()
 
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Nama Gerakan")
+        TextContent(title = "Nama Kegiatan")
         Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Gerakan))
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Kegiatan))
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Deskripsi")
+        TextContent(title = "Nama Terapis")
         Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Deskripsi))
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Terapis))
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Video Gerakan")
-// Button for uploading video
-        Button(
-            onClick = {
-                // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
-                // dan mengatur URI video yang dipilih ke variabel videoUri.
-                // Contoh, Anda dapat menggunakan FilePicker API jika  -verisoersedia.
-                // Kemudian, Anda dapat menangani URI video yang dipilih sesuai kebutuhan.
-            },
-            shape = RoundedCornerShape(20.dp),
-            modifier = Modifier.fillMaxWidth()
-                .padding(start = 10.dp, top = 15.dp, bottom = 15.dp)
-                .size(60.dp)
-                .testTag("upload_button")
-                .background(colorResource(id = R.color.white))
-                .border(1.dp, colorResource(id = R.color.Purple), shape = RoundedCornerShape(20.dp)),
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.White,
-                contentColor = colorResource(id = R.color.Purple) // Warna teks ungu (purple)
-            )
-        ) {
-            Text("Unggah Video")
-        }
+        TextContent(title = "Lokasi")
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Lokasi))
+        Spacer(modifier = Modifier.height(20.dp))
+        TextContent(title = "Waktu")
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Waktu))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Spacer(modifier = Modifier.height(175.dp))
 
@@ -76,7 +59,7 @@ fun AddMove(navController: NavController) {
 }
 
 @Composable
-fun MoveAdd() {
+fun UpActi() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
@@ -98,6 +81,6 @@ fun MoveAdd() {
 
 @Preview(showBackground = true)
 @Composable
-fun Move() {
-    AddMove(navController = rememberNavController())
+fun Activity() {
+    Activityadd(navController = rememberNavController())
 }
