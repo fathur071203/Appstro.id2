@@ -47,7 +47,7 @@ fun ButtonMenuPatient(navController: NavController) {
             .border(width = 2.dp, colorResource(id = R.color.white))
     ) {
         Column(modifier = Modifier) {
-            Row(modifier = Modifier.padding(15.dp)) {
+            Row(modifier = Modifier.padding(0.dp)) {
 
                 Row(
                     modifier = Modifier
@@ -68,8 +68,8 @@ fun ButtonMenuPatient(navController: NavController) {
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
-                                .height(45.dp)
-                                .width(150.dp)
+                                .height(60.dp)
+                                .width(155.dp)
                                 .fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
                                 backgroundColor = colorResource(id = R.color.Purple),
@@ -99,8 +99,8 @@ fun ButtonMenuPatient(navController: NavController) {
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
-                                .height(45.dp)
-                                .width(150.dp)
+                                .height(60.dp)
+                                .width(155.dp)
                                 .fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
                                 backgroundColor = colorResource(id = R.color.Purple),
@@ -123,8 +123,8 @@ fun ButtonMenuPatient(navController: NavController) {
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
-                                .height(45.dp)
-                                .width(150.dp)
+                                .height(60.dp)
+                                .width(155.dp)
                                 .fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
                                 backgroundColor = colorResource(id = R.color.Purple),
@@ -148,8 +148,8 @@ fun ButtonMenuPatient(navController: NavController) {
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
-                                .height(45.dp)
-                                .width(150.dp)
+                                .height(60.dp)
+                                .width(155.dp)
                                 .fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
                                 backgroundColor = colorResource(id = R.color.Purple),

@@ -49,7 +49,7 @@ fun Datapatient(navController: NavController) {
                         .clip(RoundedCornerShape(20.dp))
                         .background(colorResource(id = R.color.yellow))
                         .width(350.dp)
-                        .height(254.dp)
+                        .height(245.dp)
                 ) {
 
                     Column(
