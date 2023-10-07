@@ -41,6 +41,7 @@ import coil.request.ImageRequest
 import com.example.neurecare.R
 import com.example.neurecare.data.datadummy.DataItemProfile
 import com.example.neurecare.ui.component.ButtonMenuPatient
+import com.example.neurecare.ui.component.Datapatient
 import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.component.TitleContent
 
@@ -81,11 +82,17 @@ fun ProfilePatientScreen(navController: NavController) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Tampilkan ButtonMenuPatient di sini
+            ProfilePatientImage()
+            Spacer(modifier = Modifier.height(20.dp))
+            Datapatient(navController = navController)
+            Spacer(modifier = Modifier.height(20.dp))
+            // Tambahkan komponen ButtonMenuPatient di sini
             ButtonMenuPatient(navController = navController)
+
         }
     }
 }
+
 
 @Composable
 fun ProfilePatientImage() {
