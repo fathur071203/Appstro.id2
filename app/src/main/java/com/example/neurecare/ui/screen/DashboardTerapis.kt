@@ -126,6 +126,9 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
             composable(Routes.AddActivity.route) {
                 Activityadd(navController = navController)
             }
+            composable(Routes.Patient.route){
+                Patient()
+            }
 
         }
 

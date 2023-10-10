@@ -172,7 +172,7 @@ fun TPatientDash(navController: NavController)
                     .align(Alignment.CenterHorizontally)
                 ,
                 onClick = {
-                    navController.navigate(Routes.DetailProgram.route)
+                    navController.navigate(Routes.Patient.route)
                 },
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = colorResource(id = R.color.Blue_4B)
