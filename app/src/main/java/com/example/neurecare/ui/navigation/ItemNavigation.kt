@@ -13,6 +13,8 @@ sealed class Screen(val route: String, val title: String?, val icon: ImageVector
     object Profile : Screen(Routes.Profile.route, title = "Profile", Icons.Outlined.Person)
     object SkipNext : Screen(Routes.SkipNext.route, title = "Skip Next", Icons.Outlined.SkipNext)
     object SkipPrevious : Screen(Routes.SkipPrevious.route, title = "Skip Previous", Icons.Outlined.SkipPrevious)
+    object Activity : Screen(Routes.AddActivity.route, title = "Add Activity", Icons.Outlined.Home)
+
 
 
 }

@@ -17,5 +17,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "neurecare"
+rootProject.name = "AppstroT"
 include ':app'

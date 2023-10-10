@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.ui.navigation.Routes
-import com.example.neurecare.ui.screen.DashboardScreen
+import com.example.neurecare.ui.screen.DashboardTerapisScreen
 import com.example.neurecare.ui.screen.OnBoardingScreen
 import com.example.neurecare.ui.screen.SignInScreen
 import com.example.neurecare.ui.screen.SignUpScreen
@@ -28,10 +28,6 @@ fun NeurecareApp(navController: NavHostController = rememberNavController()) {
             composable(Routes.SplashScreen.route){
                 SplashScreen(navController = navController)
             }
-            composable(Routes.OnBoard.route){
-                OnBoardingScreen(navController = navController)
-
-            }
             composable(Routes.Register.route){
                 SignUpScreen(navController = navController)
             }
@@ -39,7 +35,7 @@ fun NeurecareApp(navController: NavHostController = rememberNavController()) {
                 SignInScreen(navController = navController)
             }
             composable(Routes.Dashboard.route){
-                DashboardScreen()
+                DashboardTerapisScreen()
             }
         }
     }

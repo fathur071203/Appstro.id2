@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -31,15 +32,36 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.R
 import com.example.neurecare.ui.navigation.Routes
 
+import androidx.navigation.compose.navigation
+
 
 @Composable
+fun MainScreen() {
+    val navController = rememberNavController() // Inisialisasi NavController
+
+    NavHost(navController = navController, startDestination = Routes.Home.route) {
+        composable(route = Routes.Home.route) {
+            ButtonMenuPatient(navController = navController) // Mengirimkan NavController ke komponen ButtonMenuPatient
+        }
+
+        composable(route = Routes.AddActivity.route) {
+            // Implementasi AddActivity
+        }
+
+        // Tambahkan komposisi lain sesuai kebutuhan Anda
+    }
+}
+@Composable
 fun ButtonMenuPatient(navController: NavController) {
+
     Box(
-        modifier = Modifier
+       modifier = Modifier
             .clip(RoundedCornerShape(20.dp))
             .width(350.dp)
             .height(160.dp)
@@ -64,7 +86,7 @@ fun ButtonMenuPatient(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                // Tambahkan aksi yang sesuai di sini untuk tombol "Program"
+                                navController.navigate(Routes.AddActivity.route)// Navigate to AddActivity
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
@@ -80,11 +102,10 @@ fun ButtonMenuPatient(navController: NavController) {
                                 verticalAlignment = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
-                                // Tambahkan gambar XML di sini
                                 Image(
-                                    painter = painterResource(id = R.drawable.program), // Ganti dengan res ID gambar XML Anda
-                                    contentDescription = null, // Isi dengan deskripsi gambar jika diperlukan
-                                    modifier = Modifier.size(40.dp) // Sesuaikan ukuran gambar sesuai kebutuhan Anda
+                                    painter = painterResource(id = R.drawable.program),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(40.dp)
                                 )
 
                                 Text("Program", fontSize = 15.sp)

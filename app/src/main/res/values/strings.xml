@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">neurecare</string>
+    <string name="app_name">Appstro Pasien</string>
     <string name="username">User Name</string>
     <string name="password">Password</string>
     <string name="Email">Email</string>
@@ -12,4 +12,6 @@
     <string name="Lokasi">Lokasi</string>
     <string name="Waktu">Waktu</string>
     <string name="Nama_Program">Nama Program</string>
+    <string name="Batas_Derajat_Gerakan">Batas Derajat Gerakan</string>
+    <string name="Pilih_Tanggal">Pilih Tanggal</string>
 </resources>

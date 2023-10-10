@@ -28,11 +28,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.R
 import com.example.neurecare.ui.component.GreetingBar
 import com.example.neurecare.ui.component.Programs
-
+import com.example.neurecare.ui.component.TPatientDash
 
 
 @Composable
-fun HomeScreen(
+fun HomeScreenTerapist(
     navController: NavController
 ){
 
@@ -67,7 +67,7 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(15.dp))
         GreetingBar()
         Spacer(modifier = Modifier.height(15.dp))
-        Programs(navController)
+        TPatientDash(navController)
         Spacer(modifier = Modifier.height(15.dp))
 
     }
@@ -79,6 +79,6 @@ fun HomeScreen(
 
 @Preview(showBackground = true, device = Devices.PIXEL_4)
 @Composable
-fun HomePreview(){
-    HomeScreen(navController = rememberNavController())
+fun TerapistHomePreview(){
+    HomeScreenTerapist(navController = rememberNavController())
 }

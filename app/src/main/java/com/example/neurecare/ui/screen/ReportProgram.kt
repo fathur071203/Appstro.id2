@@ -26,61 +26,24 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.R
 import com.example.neurecare.ui.component.ButtonPrimary
+import com.example.neurecare.ui.component.PickDate
 import com.example.neurecare.ui.component.PrimaryTextField
 import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.navigation.Routes
 
 @Composable
-fun MakeProgram(navController: NavController) {
+fun ReportProgram(navController: NavController) {
     Column(modifier = Modifier.padding(16.dp)) {
-        MakeP()
+        BackProgram()
 
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Nama Program")
-        Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Program))
-        Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Nama Terapis")
-        Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Terapis))
-        Spacer(modifier = Modifier.height(5.dp))
-        TextContent(title = "List Gerakan")
-        Spacer(modifier = Modifier.height(5.dp))
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Terapis))
-        Spacer(modifier = Modifier.height(20.dp))
+        PickDate(placeholder = stringResource(id =  R.string.Pilih_Tanggal))
 
-// Button for uploading video
-        Button(
-            onClick = {
-                // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
-                // dan mengatur URI video yang dipilih ke variabel videoUri.
-                // Contoh, Anda dapat menggunakan FilePicker API jika  -verisoersedia.
-                // Kemudian, Anda dapat menangani URI video yang dipilih sesuai kebutuhan.
-            },
-            shape = RoundedCornerShape(20.dp),
-            modifier = Modifier.fillMaxWidth()
-                .padding(start = 10.dp, top = 15.dp, bottom = 15.dp)
-                .size(60.dp)
-                .testTag("upload_button")
-                .background(colorResource(id = R.color.white))
-                .border(1.dp, colorResource(id = R.color.Purple), shape = RoundedCornerShape(20.dp)),
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.White,
-                contentColor = colorResource(id = R.color.Purple) // Warna teks ungu (purple)
-            )
-        ) {
-            Text("+ Pilih Gerakan")
-        }
-
-        Spacer(modifier = Modifier.height(175.dp))
-
-        ButtonPrimary(onClick = { /*TODO*/ }, text = "Simpan Program")
-        Spacer(modifier = Modifier.height(15.dp))
     }
 }
 
 @Composable
-fun MakeP() {
+fun BackProgram() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
@@ -91,7 +54,7 @@ fun MakeP() {
             modifier = Modifier.size(30.dp)
         )
         Text(
-            "Tambah Kegiatan",
+            "Review Program",
             fontSize = 24.sp,
             fontWeight = FontWeight.SemiBold,
             color = colorResource(id = R.color.Blue_4B),
@@ -102,6 +65,6 @@ fun MakeP() {
 
 @Preview(showBackground = true)
 @Composable
-fun MakeProg() {
-    MakeProgram(navController = rememberNavController())
+fun ReportProgramPreview() {
+    ReportProgram(navController = rememberNavController())
 }

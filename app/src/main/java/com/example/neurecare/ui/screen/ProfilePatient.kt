@@ -87,7 +87,7 @@ fun ProfilePatientScreen(navController: NavController) {
             Datapatient(navController = navController)
             Spacer(modifier = Modifier.height(20.dp))
             // Tambahkan komponen ButtonMenuPatient di sini
-            ButtonMenuPatient(navController = navController)
+            ButtonMenuPatient(navController)
 
         }
     }

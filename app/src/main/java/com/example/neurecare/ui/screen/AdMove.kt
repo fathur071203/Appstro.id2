@@ -44,8 +44,11 @@ fun AddMove(navController: NavController) {
         Spacer(modifier = Modifier.height(5.dp))
         PrimaryTextField(placeholder = stringResource(id =  R.string.Deskripsi))
         Spacer(modifier = Modifier.height(20.dp))
-        TextContent(title = "Video Gerakan")
+        TextContent(title = "Derajat Gerakan")
+        Spacer(modifier = Modifier.height(5.dp))
+        PrimaryTextField(placeholder = stringResource(id =  R.string.Batas_Derajat_Gerakan))
 // Button for uploading video
+        TextContent(title = "Video Gerakan")
         Button(
             onClick = {
                 // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
