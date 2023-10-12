@@ -8,4 +8,4 @@ data class ProfileViewModel (
     val icon: Int,
     val title: String,
     val Route: String
-        )
+)

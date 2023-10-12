@@ -26,8 +26,11 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.neurecare.R
 import com.example.neurecare.ui.component.ButtonPrimary
+import com.example.neurecare.ui.component.DashReport
+import com.example.neurecare.ui.component.Feedback
 import com.example.neurecare.ui.component.PickDate
 import com.example.neurecare.ui.component.PrimaryTextField
+import com.example.neurecare.ui.component.SumReport
 import com.example.neurecare.ui.component.TextContent
 import com.example.neurecare.ui.navigation.Routes
 
@@ -38,6 +41,13 @@ fun ReportProgram(navController: NavController) {
 
         Spacer(modifier = Modifier.height(20.dp))
         PickDate(placeholder = stringResource(id =  R.string.Pilih_Tanggal))
+        Spacer(modifier = Modifier.height(20.dp))
+        DashReport(navController = navController)
+        Spacer(modifier = Modifier.height(20.dp))
+        SumReport(navController = navController)
+        Spacer(modifier = Modifier.height(20.dp))
+        Feedback(navController = navController)
+
 
     }
 }

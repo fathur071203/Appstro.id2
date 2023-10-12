@@ -44,7 +44,7 @@ import com.example.neurecare.R
 import com.example.neurecare.ui.navigation.Routes
 
 @Composable
-fun SumReport(navController: NavController) {
+fun Feedback(navController: NavController) {
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(20.dp))
@@ -69,33 +69,11 @@ fun SumReport(navController: NavController) {
                         .padding(vertical = 10.dp)
                         .fillMaxWidth()
                     ) {
-                        Text("Mengangkat Bahu", fontSize = 15.sp, fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.weight(2f))
+                        Text("Feedback", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                        Spacer(modifier = Modifier.weight(1f))
                         //  Memanggil komponen bar chart horizontal
-                        HorizontalBarChart()
 
-                        Button(
-                            onClick = {
-                                // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
-                                // dan mengatur URI video yang dipilih ke variabel videoUri.
-                                // Contoh, Anda dapat menggunakan FilePicker API jika tersedia.
-                                // Kemudian, Anda dapat menangani URI video yang dipilih sesuai kebutuhan.
-                            },
-                            shape = RoundedCornerShape(14.dp),
-                            modifier = Modifier.fillMaxWidth()
-                                .padding(start = 1.dp, top = 15.dp, bottom = 15.dp, end = 2.dp)
-                                .height(40.dp)
-                                .width(70.dp)
-                                .testTag("report_button")
-                                .background(colorResource(id = R.color.Abu)),
-                            colors = ButtonDefaults.buttonColors(
-                                backgroundColor = Color.White,
-                                contentColor = colorResource(id = R.color.Purple)
-                            )
-                        ) {
-                            Text("Lihat Laporan")
-                        }
-
+                        Text("Saya sangat terkesan dengan program rehabilitasi pasca stroke ini. Terima kasih kepada seluruh tim medis yang telah membantu saya pulih secara signifikan. Saya merasa lebih kuat dan lebih mampu melakukan kegiatan sehari-hari.", fontSize = 15.sp)
 
                     }
                 }
@@ -104,54 +82,11 @@ fun SumReport(navController: NavController) {
     }
 }
 
-@Composable
-fun HorizontalBarChart() {
-    val data = listOf(
-        BarChartData("Berhasil", 0.3f, Color.Green),
-        BarChartData("Tidak Sempurna", 0.4f, Color.Yellow),
-        BarChartData("Tidak Berhasil", 0.3f, Color.Red)
-    )
-
-    Canvas(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(20.dp)
-            .width(10.dp)
-    ) {
-        var startX = 0f
-        data.forEach { barData ->
-            val barWidth = size.width * barData.percentage
-            drawRect(
-                color = barData.color,
-                topLeft = Offset(startX, 1f),
-                size = Size(barWidth, size.height)
-            )
-
-            val text = "${(barData.percentage * 100).toInt()}%" // Menghitung persentase
-            val textWidth = size.width * 0.2f // Lebar teks
-            val textX = startX + (barWidth - textWidth) / 2
-            val textY = size.height + 10f // Margin bawah teks dari batang
-
-            drawIntoCanvas { canvas ->
-                val paint = android.graphics.Paint().apply {
-                    color = Color.Black.toArgb()
-                    textSize = 12.sp.toPx()
-                }
-                canvas.nativeCanvas.drawText(text, textX, textY, paint)
-            }
-
-
-            startX += barWidth
-        }
-    }
-}
-
-data class BarChartData(val label: String, val percentage: Float, val color: Color)
 
 
 @Preview(showBackground = true)
 @Composable
-fun SumReportPreview()
+fun FeedbackPreview()
 {
-    SumReport(navController = rememberNavController())
+    Feedback(navController = rememberNavController())
 }

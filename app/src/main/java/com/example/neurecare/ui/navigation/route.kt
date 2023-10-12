@@ -18,6 +18,7 @@ sealed class Routes(val route:String) {
 
 
 
+
     object VideoScreen : Routes("video_screen")
     object DetailProgram : Routes("detail/{id}") {
         fun createRoute(id: Int) = "detail/$id"

@@ -49,7 +49,7 @@ fun SignInScreen(navController:NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.brown))
+            .background(color = colorResource(id = R.color.Blue_4B))
     ) {
         Icon(
             painter = painterResource(id = R.drawable.vector),
@@ -72,9 +72,9 @@ fun SignInScreen(navController:NavController) {
             LogInTitle()
             Spacer(modifier = Modifier.height(30.dp))
             Column(modifier = Modifier.padding(16.dp)) {
-                TextContent(title = stringResource(id = R.string.Email))
+                TextContent(title = stringResource(id = R.string.Username))
                 Spacer(modifier = Modifier.height(4.dp))
-                PrimaryTextField(placeholder = "Email")
+                PrimaryTextField(placeholder = "Username")
                 Spacer(modifier = Modifier.height(25.dp))
                 TextContent(title = stringResource(id = R.string.password))
                 Spacer(modifier = Modifier.height(4.dp))
@@ -90,7 +90,7 @@ fun SignInScreen(navController:NavController) {
                         }
 
 
-                    },
+                    }
                 )
 
             }
@@ -120,6 +120,31 @@ fun SignInScreen(navController:NavController) {
 
         }
     }
+    fun handleLogin() {
+        // Dapatkan username dan password dari input pengguna
+        val username = "Username" // Ganti dengan nilai yang benar dari TextField
+        val password = "Password" // Ganti dengan nilai yang benar dari PasswordTextField
+
+        // Ganti URL API dengan URL yang sesuai
+        val apiUrl = "http://35.239.178.213:5000/api/v1/user"
+
+        // Lakukan panggilan API untuk mendapatkan data pengguna
+        val userData = getUserDataFromApi(apiUrl)
+
+        // Periksa apakah username dan password sesuai dengan data pengguna
+        if (userData != null && username == userData.username && password == userData.password) {
+            // Jika sesuai, navigasi ke dashboard
+            navController.navigate(Routes.Dashboard.route) {
+                popUpTo(Routes.Login.route) {
+                    inclusive = true
+                }
+            }
+        } else {
+            // Jika tidak sesuai, tampilkan pesan kesalahan atau notifikasi kesalahan
+            // Misalnya: showError("Username atau password salah")
+        }
+    }
+
 }
 
 @Composable
@@ -131,9 +156,11 @@ fun LogInTitle(){
             ))
     }
 }
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun LoginScreePreview(){
-//    LoginScreen(navController = rememberNavController())
-//}
+
+
+
+@Preview(showBackground = true)
+@Composable
+fun LoginScreePreview(){
+    SignInScreen(navController = rememberNavController())
+}
