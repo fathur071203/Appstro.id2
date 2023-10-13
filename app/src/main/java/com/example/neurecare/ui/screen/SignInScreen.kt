@@ -120,30 +120,30 @@ fun SignInScreen(navController:NavController) {
 
         }
     }
-    fun handleLogin() {
-        // Dapatkan username dan password dari input pengguna
-        val username = "Username" // Ganti dengan nilai yang benar dari TextField
-        val password = "Password" // Ganti dengan nilai yang benar dari PasswordTextField
-
-        // Ganti URL API dengan URL yang sesuai
-        val apiUrl = "http://35.239.178.213:5000/api/v1/user"
-
-        // Lakukan panggilan API untuk mendapatkan data pengguna
-        val userData = getUserDataFromApi(apiUrl)
-
-        // Periksa apakah username dan password sesuai dengan data pengguna
-        if (userData != null && username == userData.username && password == userData.password) {
-            // Jika sesuai, navigasi ke dashboard
-            navController.navigate(Routes.Dashboard.route) {
-                popUpTo(Routes.Login.route) {
-                    inclusive = true
-                }
-            }
-        } else {
-            // Jika tidak sesuai, tampilkan pesan kesalahan atau notifikasi kesalahan
-            // Misalnya: showError("Username atau password salah")
-        }
-    }
+//    fun handleLogin() {
+//        // Dapatkan username dan password dari input pengguna
+//        val username = "Username" // Ganti dengan nilai yang benar dari TextField
+//        val password = "Password" // Ganti dengan nilai yang benar dari PasswordTextField
+//
+//        // Ganti URL API dengan URL yang sesuai
+//        val apiUrl = "http://35.239.178.213:5000/api/v1/user"
+//
+//        // Lakukan panggilan API untuk mendapatkan data pengguna
+//        val userData = getUserDataFromApi(apiUrl)
+//
+//        // Periksa apakah username dan password sesuai dengan data pengguna
+//        if (userData != null && username == userData.username && password == userData.password) {
+//            // Jika sesuai, navigasi ke dashboard
+//            navController.navigate(Routes.Dashboard.route) {
+//                popUpTo(Routes.Login.route) {
+//                    inclusive = true
+//                }
+//            }
+//        } else {
+//            // Jika tidak sesuai, tampilkan pesan kesalahan atau notifikasi kesalahan
+//            // Misalnya: showError("Username atau password salah")
+//        }
+//    }
 
 }
 

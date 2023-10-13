@@ -15,8 +15,12 @@ sealed class Routes(val route:String) {
     object PoseReport : Routes("report_pose")
     object AddActivity : Routes("add_activity")
     object Patient : Routes("patient")
+    object AddMovement : Routes("add_movement")
 
+    object Schedule : Routes("schedule")
 
+    object Review : Routes("review")
+    object PoseDetectionScreen : Routes("pose_detection_screen")
 
 
     object VideoScreen : Routes("video_screen")

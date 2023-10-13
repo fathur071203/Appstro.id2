@@ -8,6 +8,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,12 +30,15 @@ import com.example.neurecare.R
 import com.example.neurecare.ui.component.ButtonPrimary
 import com.example.neurecare.ui.component.PrimaryTextField
 import com.example.neurecare.ui.component.TextContent
+import com.example.neurecare.ui.component.addLocation
 import com.example.neurecare.ui.navigation.Routes
 
 @Composable
-fun Activityadd(navController: NavController) {
-    Column(modifier = Modifier.padding(16.dp)) {
-        UpActi()
+fun ActivityAdd(navController: NavController) {
+    Column(modifier = Modifier
+        .padding(16.dp)
+        .fillMaxWidth()) {
+        onClickBack()
 
         Spacer(modifier = Modifier.height(20.dp))
         TextContent(title = "Nama Kegiatan")
@@ -45,12 +50,11 @@ fun Activityadd(navController: NavController) {
         PrimaryTextField(placeholder = stringResource(id =  R.string.Nama_Terapis))
         Spacer(modifier = Modifier.height(20.dp))
         TextContent(title = "Lokasi")
-        PrimaryTextField(placeholder = stringResource(id =  R.string.Lokasi))
+        addLocation()
         Spacer(modifier = Modifier.height(20.dp))
         TextContent(title = "Waktu")
         PrimaryTextField(placeholder = stringResource(id =  R.string.Waktu))
         Spacer(modifier = Modifier.height(20.dp))
-
         Spacer(modifier = Modifier.height(175.dp))
 
         ButtonPrimary(onClick = { /*TODO*/ }, text = "Tambah Gerakan")
@@ -59,22 +63,25 @@ fun Activityadd(navController: NavController) {
 }
 
 @Composable
-fun UpActi() {
+fun onClickBack(
+
+) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.back), // Ganti dengan ID sumber daya gambar yang sesuai
-            contentDescription = "Back",
-            modifier = Modifier.size(30.dp)
-        )
+        IconButton(onClick = { /*TODO*/ }) {
+            Icon(painter = painterResource(id = R.drawable.back), contentDescription ="Back" )
+            
+        }
         Text(
             "Tambah Gerakan",
-            fontSize = 24.sp,
+            fontSize = 20.sp,
             fontWeight = FontWeight.SemiBold,
             color = colorResource(id = R.color.Blue_4B),
-            modifier = Modifier.weight(1f) // Menggunakan weight untuk memberikan ruang yang sama pada gambar dan teks
+            modifier = Modifier
+                .weight(1f) // Menggunakan weight untuk memberikan ruang yang sama pada gambar dan teks
+                .padding(start = 5.dp)
         )
     }
 }
@@ -82,5 +89,5 @@ fun UpActi() {
 @Preview(showBackground = true)
 @Composable
 fun Activity() {
-    Activityadd(navController = rememberNavController())
+    ActivityAdd(navController = rememberNavController())
 }

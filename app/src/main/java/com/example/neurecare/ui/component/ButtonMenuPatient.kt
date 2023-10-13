@@ -86,7 +86,7 @@ fun ButtonMenuPatient(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                navController.navigate(Routes.AddActivity.route)// Navigate to AddActivity
+                                navController.navigate(Routes.AddMovement.route)// Navigate to AddActivity
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
@@ -140,7 +140,7 @@ fun ButtonMenuPatient(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                // Tambahkan aksi yang sesuai di sini untuk tombol "Jenis Kelamin"
+                               navController.navigate(Routes.Schedule.route)
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
@@ -165,7 +165,7 @@ fun ButtonMenuPatient(navController: NavController) {
 
                         Button(
                             onClick = {
-                                // Tambahkan aksi yang sesuai di sini untuk tombol "Alamat"
+                              navController.navigate(Routes.Review.route)
                             },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
@@ -183,7 +183,7 @@ fun ButtonMenuPatient(navController: NavController) {
                                 modifier = Modifier.size(40.dp) // Sesuaikan ukuran gambar sesuai kebutuhan Anda
                             )
 
-                            Text("Laporan", fontSize = 15.sp)
+                            Text("Review", fontSize = 15.sp)
                         }
                     }
                 }

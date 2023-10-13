@@ -76,10 +76,7 @@ fun SumReport(navController: NavController) {
 
                         Button(
                             onClick = {
-                                // Anda dapat membuka pemilih file di sini untuk membiarkan pengguna memilih file video
-                                // dan mengatur URI video yang dipilih ke variabel videoUri.
-                                // Contoh, Anda dapat menggunakan FilePicker API jika tersedia.
-                                // Kemudian, Anda dapat menangani URI video yang dipilih sesuai kebutuhan.
+                               navController.navigate(Routes.PoseDetectionScreen.route)
                             },
                             shape = RoundedCornerShape(14.dp),
                             modifier = Modifier.fillMaxWidth()

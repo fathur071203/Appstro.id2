@@ -9,51 +9,35 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.neurecare.R
 
+
 @Composable
-fun ButtonPrimary(onClick: () -> Unit, text: String){
+fun ButtonAddMovement(onClick: () -> Unit) {
     Button(
         modifier = Modifier
             .fillMaxWidth()
-            .height(59.dp),
-        onClick = onClick,
-        colors = ButtonDefaults.buttonColors(colorResource(id = R.color.Blue_4B)),
-        shape = RoundedCornerShape(20.dp),) {
-        Text(text = text, fontSize = 16.sp, color = Color.White)
-
-    }
-
-}
-
-@Composable
-fun ButtonAddCalender(onClick: () -> Unit, text: String) {
-    Button(
-        modifier = Modifier
-            .fillMaxWidth()
-            .border(width = 1.dp, color = colorResource(id = R.color.Blue_4B), shape = RoundedCornerShape(10.dp))
+            .border(
+                width = 1.dp,
+                color = colorResource(id = R.color.Blue_4B),
+                shape = RoundedCornerShape(10.dp)
+            )
             .height(50.dp),
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(colorResource(id = R.color.white)),
         shape = RoundedCornerShape(10.dp),
 
 
-
-    ) {
-        Text(text = "+ Tambah Jadwal", color = colorResource(id = R.color.Blue_4B))
+        ) {
+        Text(text = "+ Tambah Gerakan", color = colorResource(id = R.color.Blue_4B))
     }
 }
 
-
-
-@Preview
 @Composable
-fun ButtonPrimaryPreview(){
-    ButtonAddCalender(onClick = {}, text = "Button")
+@Preview(showBackground = true)
+fun ButtonAddMovementPreview() {
+    ButtonAddMovement(onClick = {})
 }

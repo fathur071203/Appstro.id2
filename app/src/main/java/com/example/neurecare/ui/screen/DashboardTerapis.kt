@@ -29,6 +29,7 @@ import com.example.neurecare.R
 import com.example.neurecare.data.model.DetailViewModel
 import com.example.neurecare.ui.component.BottomNav
 import com.example.neurecare.ui.component.BottomNavVideoScreen
+import com.example.neurecare.ui.component.CalenderBar
 //import com.example.neurecare.ui.component.BottomBar
 import com.example.neurecare.ui.navigation.Routes
 
@@ -42,7 +43,7 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
 
     Scaffold(
         bottomBar = {
-            if (currentDestination != Routes.DetailProgram.route && currentDestination != Routes.AddActivity.route){
+            if (currentDestination != Routes.DetailProgram.route && currentDestination != Routes.AddMovement.route && currentDestination != Routes.AddActivity.route) {
                 BottomAppBar(
                     modifier = Modifier
                         .height(65.dp)
@@ -52,7 +53,7 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
                     backgroundColor = colorResource(id = R.color.Purple),
 
                     ) {
-                    if (currentDestination != Routes.DetailProgram.route && currentDestination != Routes.AddActivity.route) {
+                    if (currentDestination != Routes.DetailProgram.route && currentDestination != Routes.AddMovement.route && currentDestination != Routes.AddActivity.route) {
                         if (currentDestination == Routes.VideoScreen.route) {
                             // Tampilkan bottom navigation yang berbeda untuk Video Screen
                             BottomNavVideoScreen(navController)
@@ -68,7 +69,7 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
         isFloatingActionButtonDocked = true,
 
         floatingActionButton = {
-            if (currentDestination != Routes.DetailProgram.route && currentDestination != Routes.AddActivity.route ){
+            if (currentDestination != Routes.DetailProgram.route && currentDestination != Routes.AddMovement.route && currentDestination != Routes.AddActivity.route ){
                 FloatingActionButton(
                     shape = CircleShape,
                     onClick = {
@@ -120,14 +121,21 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
             composable(Routes.Profile.route){
                 ProfileScreen(navController = navController)
             }
-//         composable(Routes.PoseDetection.route) {
-//             PoseDetectionScreen()
-//         }
-            composable(Routes.AddActivity.route) {
-                Activityadd(navController = navController)
+            composable(Routes.AddMovement.route) {
+                AddMovement()
             }
             composable(Routes.Patient.route){
                 Patient()
+            }
+
+            composable(Routes.Schedule.route){
+                ActivityAdd(navController = navController)
+            }
+            composable(Routes.Review.route) {
+                ReportProgram(navController = navController)
+            }
+            composable(Routes.PoseDetectionScreen.route) {
+                PoseDetectionScreen(navController = navController)
             }
 
         }
