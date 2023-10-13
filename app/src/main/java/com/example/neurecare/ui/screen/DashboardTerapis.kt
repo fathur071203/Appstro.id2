@@ -113,7 +113,7 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
                 MessageScreen(navController = navController)
             }
             composable(Routes.AccessProgram.route){
-                ProfilePatientScreen(navController = navController)
+                RowItemPatient(navController = navController)
             }
             composable(Routes.DetailProgram.route){
                 JenisProgram(navController = navController, detailViewModel = DetailViewModel() )
@@ -125,7 +125,7 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
                 AddMovement()
             }
             composable(Routes.Patient.route){
-                Patient()
+                RowItemPatient(navController = navController)
             }
 
             composable(Routes.Schedule.route){
@@ -137,6 +137,10 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
             composable(Routes.PoseDetectionScreen.route) {
                 PoseDetectionScreen(navController = navController)
             }
+            composable(Routes.ProfilePatient.route) {
+                ProfilePatientScreen(navController = navController)
+            }
+
 
         }
 

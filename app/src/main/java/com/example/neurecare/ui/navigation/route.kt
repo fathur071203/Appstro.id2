@@ -4,7 +4,6 @@ sealed class Routes(val route:String) {
     object Home : Routes("home")
     object Calendar : Routes("calendar")
     object Message : Routes("message")
-    object PoseDetection : Routes("pose_detection_screen")
     object AccessProgram : Routes("access_program")
     object Profile : Routes("profile")
     object Login : Routes("login")
@@ -21,6 +20,7 @@ sealed class Routes(val route:String) {
 
     object Review : Routes("review")
     object PoseDetectionScreen : Routes("pose_detection_screen")
+    object ProfilePatient : Routes("profile_patient")
 
 
     object VideoScreen : Routes("video_screen")

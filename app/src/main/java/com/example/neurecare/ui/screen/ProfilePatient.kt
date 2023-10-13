@@ -71,7 +71,7 @@ fun ProfilePatientScreen(navController: NavController) {
                     painter = painterResource(id = R.drawable.chat),
                     contentDescription = null,
                     tint = colorResource(id = R.color.white),
-                    modifier = Modifier.size(24.dp)
+                    modifier = Modifier.size(20.dp)
                 )
             }
         }
@@ -163,17 +163,15 @@ fun BackDetail() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.back), // Ganti dengan ID sumber daya gambar yang sesuai
-            contentDescription = "Back",
-            modifier = Modifier.size(30.dp)
-        )
+        IconButton(onClick = { /*TODO*/ }) {
+            painterResource(id = R.drawable.back)
+            
+        }
         Text(
             "Detail Pasien",
-            fontSize = 24.sp,
+            fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             color = colorResource(id = R.color.Blue_4B),
-            modifier = Modifier.weight(1f) // Menggunakan weight untuk memberikan ruang yang sama pada gambar dan teks
         )
     }
 }
