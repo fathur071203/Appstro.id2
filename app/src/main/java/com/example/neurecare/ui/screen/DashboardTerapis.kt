@@ -122,7 +122,7 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
                 ProfileScreen(navController = navController)
             }
             composable(Routes.AddMovement.route) {
-                AddMovement()
+                AddMovement(navController = navController)
             }
             composable(Routes.Patient.route){
                 RowItemPatient(navController = navController)
@@ -140,6 +140,10 @@ fun DashboardTerapisScreen(navController: NavHostController = rememberNavControl
             composable(Routes.ProfilePatient.route) {
                 ProfilePatientScreen(navController = navController)
             }
+            composable(Routes.Choice.route) {
+                ChooseM(navController = navController)
+            }
+
 
 
         }

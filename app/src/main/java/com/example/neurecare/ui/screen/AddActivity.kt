@@ -75,7 +75,7 @@ fun onClickBack(
             
         }
         Text(
-            "Tambah Gerakan",
+            "Tambah Kegiatan",
             fontSize = 20.sp,
             fontWeight = FontWeight.SemiBold,
             color = colorResource(id = R.color.Blue_4B),

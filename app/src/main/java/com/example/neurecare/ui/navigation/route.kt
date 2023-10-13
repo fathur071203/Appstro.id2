@@ -21,6 +21,7 @@ sealed class Routes(val route:String) {
     object Review : Routes("review")
     object PoseDetectionScreen : Routes("pose_detection_screen")
     object ProfilePatient : Routes("profile_patient")
+    object Choice : Routes("choice")
 
 
     object VideoScreen : Routes("video_screen")

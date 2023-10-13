@@ -10,6 +10,10 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,14 +37,21 @@ import com.example.neurecare.ui.navigation.Routes
 
 @Composable
 fun ChooseM(navController: NavController) {
+    var selectedImages by remember { mutableStateOf(emptyList<Photo>()) }
+    val movements = remember { mutableStateOf(emptyList<Photo>()) }
     Column(modifier = Modifier.padding(16.dp)) {
         Choose()
         Spacer(modifier = Modifier.height(10.dp))
         PrimaryTextFieldSearch(placeholder = stringResource(id =  R.string.Cari_Gerakan))
-        Spacer(modifier = Modifier.height(175.dp))
-
-        ButtonPrimary(onClick = { /*TODO*/ }, text = "Tambah Gerakan")
+        Spacer(modifier = Modifier.height(10.dp))
+        PhotosGrid()
         Spacer(modifier = Modifier.height(15.dp))
+        ButtonPrimary(onClick = {
+            navController.navigate(Routes.AddMovement.route)
+            movements.value = movements.value + selectedImages
+            selectedImages = emptyList()
+        }, text = "Tambah Gerakan")
+
 
     }
 }
